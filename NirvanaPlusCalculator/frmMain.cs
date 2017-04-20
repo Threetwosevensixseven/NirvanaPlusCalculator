@@ -21,11 +21,13 @@ namespace NirvanaPlusCalculator
     public frmMain()
     {
       InitializeComponent();
+      Recalculating = true;
       numTotalRows.Value = 23;
       numBaseAddressHex.Value = NirvanaBaseAddress;
       numBaseAddressDec.Value = NirvanaBaseAddress;
       numColumn.Value = 0;
-      numSpectrumLine.Value = 0;
+      Recalculating = false;
+      numSpectrumLine.Value = 8;
     }
 
     public void Recalculate(object sender, EventArgs e)
@@ -43,8 +45,8 @@ namespace NirvanaPlusCalculator
       int col = x / 8;
       int y = 0;
       if (sender == numSpectrumLine) y = Convert.ToInt32(numSpectrumLine.Value);
-      else y = Convert.ToInt32(numNirvanaLine.Value - 16);
-      if (y < -8) y = -8;
+      else y = Convert.ToInt32(numNirvanaLine.Value - 8);
+      if (y < 8) y = 8;
       if (y > 191) y = 191;
       double tempLine = ((y + 16) / 2);
       int nLine = Convert.ToInt32(Math.Round(tempLine, 0) * 2) - 8;
@@ -55,14 +57,18 @@ namespace NirvanaPlusCalculator
       if (totalRows < 1) totalRows = 1;
       if (totalRows > 23) totalRows = 23;
 
+// vvv THIS IS THE ONLY IMPORTANT PART! vvv
+
       // Calculate
       int columnOffset = Deltas[col];
       int rowOffset = ((nLine - 16) / 2) * 82;
       int nirvanaRow = nLine / 8;
       int nirvanaAttributeAddress = baseAddress + rowOffset + columnOffset;
 
+// ^^^ THIS IS THE ONLY IMPORTANT PART! ^^^
+
       // Overflows
-      bool sLineOverflow = (y < 0) || (y > 255);
+      bool sLineOverflow = (y < 8) || (y > 255);
       bool nLineOverflow = (nLine < 0) || (nLine > 199);
       bool rowOverflow = (nirvanaRow < 0) || (nirvanaRow > totalRows + 1); 
       bool addressOverflow = (rowOverflow) || (nirvanaAttributeAddress > 65535) || (nirvanaAttributeAddress < 0);

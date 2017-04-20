@@ -128,10 +128,15 @@
             8,
             0,
             0,
-            -2147483648});
+            0});
       this.numSpectrumLine.Name = "numSpectrumLine";
       this.numSpectrumLine.Size = new System.Drawing.Size(224, 20);
       this.numSpectrumLine.TabIndex = 5;
+      this.numSpectrumLine.Value = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
       this.numSpectrumLine.ValueChanged += new System.EventHandler(this.Recalculate);
       this.numSpectrumLine.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Recalculate);
       // 
@@ -281,6 +286,8 @@
             0,
             0,
             0});
+      this.numTotalRows.ValueChanged += new System.EventHandler(this.Recalculate);
+      this.numTotalRows.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Recalculate);
       // 
       // label1
       // 
