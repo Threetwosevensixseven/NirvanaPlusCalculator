@@ -1,3 +1,4 @@
 #sources
 *.asm linguist-language=Assembly
-Zeus/nirvana+.asm linguist-vendored
+Zeus/* linguist-vendored
+Zeus/NirvanaAttributes.asm linguist-vendored=false
