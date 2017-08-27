@@ -1,4 +1,4 @@
 #sources
 *.asm linguist-language=Assembly
 Zeus/* linguist-vendored
-Zeus/NirvanaAttributes.asm linguist-vendored=false
+Zeus/constants.asm linguist-vendored=false
