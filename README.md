@@ -7,6 +7,4 @@ Attribute address calculator for [NIRVANA+](https://spectrumcomputing.co.uk/inde
 Download the latest version [here](https://github.com/Threetwosevensixseven/NirvanaPlusCalculator/releases/latest). Requires [Microsoft .NET Framework 4 Client Profile](https://www.microsoft.com/en-us/download/details.aspx?id=17113).
 
 ## Licence
-Copyright (c) 2017 [Robin Verhagen-Guest](https://github.com/Threetwosevensixseven)   
-
-Released under the [MIT License](https://github.com/Threetwosevensixseven/NirvanaPlusCalculator/blob/master/LICENSE).  
+Copyright (c) 2017 [Robin Verhagen-Guest](https://github.com/Threetwosevensixseven). Released under the [MIT License](https://github.com/Threetwosevensixseven/NirvanaPlusCalculator/blob/master/LICENSE).  
